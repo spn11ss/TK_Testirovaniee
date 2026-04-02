@@ -5,8 +5,66 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TK_Testirovaniee"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
-</Window>
+        Title="Стоимость проезда" Height="450" Width="800">
+    <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Расстояние (км):"
+                   Grid.Row="0" Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Margin="0,0,10,10"/>
+
+                <TextBox Name="DistanceBox"
+                 Grid.Row="0" Grid.Column="1"
+                 Margin="0,0,0,10"
+                 Padding="5"/>
+
+                <TextBlock Text="Количество билетов:"
+                   Grid.Row="1" Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Margin="0,0,10,10"/>
+
+                <TextBox Name="TicketsBox"
+                 Grid.Row="1" Grid.Column="1"
+                 Margin="0,0,0,10"
+                 Padding="5"/>
+
+                <GroupBox Header="Комфортабельность"
+                  Grid.Row="2" Grid.ColumnSpan="2"
+                  Margin="0,10,0,10"
+                  Padding="10">
+
+                    <StackPanel>
+                        <RadioButton Name="Platzkart" Content="Плацкарт" IsChecked="True"/>
+                        <RadioButton Name="Coupe" Content="Купе"/>
+                        <RadioButton Name="SemiLux" Content="Полулюкс"/>
+                        <RadioButton Name="Lux" Content="Люкс"/>
+                    </StackPanel>
+                </GroupBox>
+
+                <Button Content="Вычислить"
+                Grid.Row="3"
+                Grid.ColumnSpan="2"
+                Height="35"
+                Margin="0,10,0,10"
+                Click="Calculate_Click"/>
+
+                <TextBlock Name="ResultText"
+                   Text ="Стоимость билетов с учетом комфортабельности:"
+                   Grid.Row="4"
+                   Grid.ColumnSpan="2"
+                   TextAlignment="Center"
+                   VerticalAlignment="Center"/>
+            </Grid>
+        </Window>
